@@ -1,0 +1,22 @@
+{
+  "name": "push-notification",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gamalielsaracho/push-notification.git"
+  },
+  "author": "gamaliel saracho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gamalielsaracho/push-notification/issues"
+  },
+  "homepage": "https://github.com/gamalielsaracho/push-notification#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
