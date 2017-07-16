@@ -4,14 +4,15 @@
 // Escuchando los eventos push.
 self.addEventListener('push', function(event) {
 	// event, receptor de eventos.
-	var dato = event.data.text
+	// console.log(event.data.text())
+	var dato = event.data.text()
 	console.log('[Service Worker] Push Received.');
   	console.log('[Service Worker] Push had this data: '+dato);
 
   	var title = 'Hola mundo. y sha.'
 
   	var options = {
-  		body: 'todo el contenido aquí.',
+  		body: dato,
   		icon: 'http://www.infocree.hol.es/img/logo.png',
   		badge: 'http://www.infocree.hol.es/img/logo.png'
   	}

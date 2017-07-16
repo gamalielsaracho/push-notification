@@ -1,4 +1,4 @@
-var applicationServerPublicKey = 'BOqUZbGs9e5FKHUZYbQTJ_B2_o2d6mgpc9ujccaxqEyWE-Nf1u_bYWvsS0staVmU1_iwNveNiXlGJW0R_hGEn1g'
+var applicationServerPublicKey = 'BEIBJt3PDnxta1DrIFNtaOfou_hbzK-zfJ6TQUUbpnKbWRizuF6xLQ9Y1JnT0xk_7wrNJw48F08Bc4aoMzT1NQ4'
 
 function urlB64ToUint8Array(base64String) {
   var padding = '='.repeat((4 - base64String.length % 4) % 4);
@@ -47,6 +47,7 @@ function initialiseUI() {
 
     if(isSubscribed) {
       // TODO: Unsubscribe user
+      unsubscribeUser()
     } else {
       subscribeUser()
     }
@@ -83,6 +84,27 @@ function updateBtn() {
   }
 
   pushButton.disabled = false
+}
+
+function unsubscribeUser() {
+  swRegistration.pushManager.getSubscription()
+  .then(function (subscription) {
+    if(subscription) {
+      return subscription.unsubscribe()
+    }
+  })
+  .catch(function (error) {
+    console.log('Error unsubscribing', error)
+  })
+  .then(function () {
+    updateSubscriptionOnServer(null)
+
+    console.log('User is unsubscribed.')
+
+    isSubscribed = false
+
+    updateBtn()
+  })
 }
 
 function subscribeUser() {

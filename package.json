@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/gamalielsaracho/push-notification#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "body-parser": "^1.17.2",
+    "browserify": "^14.4.0",
+    "express": "^4.15.3",
+    "jquery": "^3.2.1",
+    "urlsafe-base64": "^1.0.0",
+    "web-push": "^3.2.2"
   }
 }
